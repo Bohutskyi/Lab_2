@@ -66,6 +66,40 @@ public class Mathematics {
         }
     }
 
+    public static BigInteger[] linearComparison(int a, int b, int n) {
+        return linearComparison(new BigInteger(String.valueOf(a)), new BigInteger(String.valueOf(b)), new BigInteger(String.valueOf(n)));
+    }
+
+    public static BigInteger[] linearComparison(BigInteger a, BigInteger b, BigInteger n) {
+        Mathematics math = Mathematics.gcd(a, n);
+        BigInteger[] result = null;
+        if (math.r.equals(BigInteger.ONE)) {
+            BigInteger temp = getReverse(a, n);
+            temp = temp.multiply(b);
+            result = new BigInteger[1];
+            result[0] = temp;
+            return result;
+        } else {
+            BigInteger[] temp = b.divideAndRemainder(math.r);
+            if (!temp[1].equals(BigInteger.ZERO)) {
+                return null;
+            } else {
+                result = new BigInteger[math.r.intValue()];
+                BigInteger[] x0 = linearComparison(a.divide(math.r), b.divide(math.r), n.divide(math.r));
+//                for (BigInteger i : x0) {
+//                    System.out.println("here");
+//                    System.out.println(i);
+//                }
+                result[0] = x0[0];
+                BigInteger n1 = n.divide(math.r);
+                for (int i = 1; i < math.r.intValue(); i++) {
+                    result[i] = result[i - 1].add(n1);
+                }
+                return result;
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Mathematics gcd1 = Mathematics.gcd(new BigInteger(Integer.toString(5)), new BigInteger(Integer.toString(9)));
         System.out.println(gcd1.x);
@@ -104,6 +138,26 @@ public class Mathematics {
         System.out.println(Mathematics.getReverse(11, 22));
         System.out.println(Mathematics.getReverse(22, 39));
         System.out.println(Mathematics.getReverse(41, 43));
+
+        System.out.println("-----------------------------");
+        System.out.println(Mathematics.linearComparison(5, 13, 21));
+        for (BigInteger i : Mathematics.linearComparison(5, 13, 21)) {
+            System.out.println(i);
+        }
+        System.out.println(Mathematics.linearComparison(256, 179, 337));
+        for (BigInteger i : Mathematics.linearComparison(256, 179, 337)) {
+            System.out.println(i);
+        }
+        System.out.println(Mathematics.linearComparison(243, 179, 337));
+        for (BigInteger i : Mathematics.linearComparison(243, 179, 337)) {
+            System.out.println(i);
+        }
+
+        System.out.println(Mathematics.linearComparison(1215, 560, 2755));
+        for (BigInteger i : Mathematics.linearComparison(1215, 560, 2755)) {
+            System.out.println(i);
+        }
+
 
     }
 }
