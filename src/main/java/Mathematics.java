@@ -86,10 +86,6 @@ public class Mathematics {
             } else {
                 result = new BigInteger[math.r.intValue()];
                 BigInteger[] x0 = linearComparison(a.divide(math.r), b.divide(math.r), n.divide(math.r));
-//                for (BigInteger i : x0) {
-//                    System.out.println("here");
-//                    System.out.println(i);
-//                }
                 result[0] = x0[0];
                 BigInteger n1 = n.divide(math.r);
                 for (int i = 1; i < math.r.intValue(); i++) {
