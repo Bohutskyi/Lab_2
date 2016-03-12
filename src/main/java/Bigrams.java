@@ -98,22 +98,24 @@ public class Bigrams extends AlphaBet {
         }
     }
 
-    public Map<String, Double> findMostFrequentBigrams() {
+    public Map<String, Double> findMostFrequentBigrams(int n) {
         Map<String, Double> result = new HashMap<String, Double>();
 
-        List list = new ArrayList(bigrams.entrySet());
+        List<Map.Entry<String, Double>> list = new ArrayList(bigrams.entrySet());
         Collections.sort(list, new Comparator<Map.Entry<String, Double>>() {
             public int compare(Map.Entry<String, Double> o1, Map.Entry<String, Double> o2) {
                 return (int) (o2.getValue() - o1.getValue());
             }
         });
-        System.out.println(list);
-        for (int i = 0; i < 5; i++) {
-            System.out.println(list.get(i));
-//            result.put(list.get(i));
+
+        int count = 0;
+        for (Map.Entry<String, Double> entry : list) {
+            if (count != n) {
+                result.put(entry.getKey(), entry.getValue());
+                count++;
+            }
         }
-
-
+//        System.out.println(list);
         return result;
     }
 
@@ -121,7 +123,7 @@ public class Bigrams extends AlphaBet {
         Bigrams bigrams = new Bigrams("text.txt", false);
 //        Bigrams bigrams = new Bigrams("text.txt", true);
         bigrams.print();
-        for (Map.Entry<String, Double> pair : bigrams.findMostFrequentBigrams().entrySet()) {
+        for (Map.Entry<String, Double> pair : bigrams.findMostFrequentBigrams(5).entrySet()) {
             System.out.println(pair.getKey() + " " + pair.getValue());
         }
     }
