@@ -1,4 +1,7 @@
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Mathematics {
 
@@ -96,6 +99,27 @@ public class Mathematics {
         }
     }
 
+    public static Map<Integer, Integer> calculateSystemComparisons(int x1, int x2, int y1, int y2, int m) {
+        Map<Integer, Integer> result = new HashMap<Integer, Integer>();
+        while (x2 > x1) {
+            x2 -= m;
+        }
+        while (y2 > y1) {
+            y2 -= m;
+        }
+        for (BigInteger i : linearComparison(x1 - x2, y1 - y2, m)) {
+            int b = (y1 - i.intValue() * x1);
+            while (b > m) {
+                b -= m;
+            }
+            while (b < 0) {
+                b += m;
+            }
+            result.put(i.intValue(), b);
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
         Mathematics gcd1 = Mathematics.gcd(new BigInteger(Integer.toString(5)), new BigInteger(Integer.toString(9)));
         System.out.println(gcd1.x);
@@ -154,6 +178,25 @@ public class Mathematics {
             System.out.println(i);
         }
 
+        System.out.println("*****************************************");
+        for (Map.Entry<Integer, Integer> entry : calculateSystemComparisons(1, 5, 6, 4, 49).entrySet()) {
+            System.out.println("a = " + entry.getKey() + " b = " + entry.getValue());
+        }
+
+        System.out.println("*****************************************");
+        for (Map.Entry<Integer, Integer> entry : calculateSystemComparisons(11, 35, 26, 14, 81).entrySet()) {
+            System.out.println("a = " + entry.getKey() + " b = " + entry.getValue());
+        }
+
+        System.out.println("*****************************************");
+        for (Map.Entry<Integer, Integer> entry : calculateSystemComparisons(1, 5, 6, 4, 49).entrySet()) {
+            System.out.println("a = " + entry.getKey() + " b = " + entry.getValue());
+        }
+
+        System.out.println("*****************************************");
+        for (Map.Entry<Integer, Integer> entry : calculateSystemComparisons(1, 5, 6, 4, 49).entrySet()) {
+            System.out.println("a = " + entry.getKey() + " b = " + entry.getValue());
+        }
 
     }
 }
