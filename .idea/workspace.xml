@@ -35,28 +35,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Mathematics.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Mathematics.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Mathematics.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="0.4074074">
               <caret line="133" column="52" selection-start-line="133" selection-start-column="52" selection-end-line="133" selection-end-column="52" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bigrams.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Bigrams.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Bigrams.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6666667">
-              <caret line="119" column="5" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="20" selection-end-column="11" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#681#692#0" expanded="true" />
-                <element signature="e#3172#3188#0" expanded="true" />
-                <element signature="e#3306#3530#0" expanded="true" />
-                <element signature="e#3529#3530#0" expanded="true" />
+                <element signature="e#1079#1090#0" expanded="true" />
+                <element signature="e#3646#3662#0" expanded="true" />
+                <element signature="e#3780#4004#0" expanded="true" />
+                <element signature="e#4003#4004#0" expanded="true" />
+                <element signature="e#4641#4649#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="text3.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/text3.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="1758" column="16" selection-start-line="1758" selection-start-column="16" selection-end-line="1758" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="1.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/1.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14351" column="0" selection-start-line="14351" selection-start-column="0" selection-end-line="14351" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="text2.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/text2.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="8589" selection-start-line="0" selection-start-column="8589" selection-end-line="0" selection-end-column="8589" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -118,6 +149,9 @@
         <option value="$PROJECT_DIR$/src/main/java/Mathematics.java" />
         <option value="$PROJECT_DIR$/text.txt" />
         <option value="$PROJECT_DIR$/src/main/java/AlphaBet.java" />
+        <option value="$PROJECT_DIR$/text2.txt" />
+        <option value="$PROJECT_DIR$/1.txt" />
+        <option value="$PROJECT_DIR$/text3.txt" />
         <option value="$PROJECT_DIR$/src/main/java/Bigrams.java" />
       </list>
     </option>
@@ -566,7 +600,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5359408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33298096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17760417" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -625,10 +659,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#681#692#0" expanded="true" />
-            <element signature="e#3172#3188#0" expanded="true" />
-            <element signature="e#3306#3530#0" expanded="true" />
-            <element signature="e#3529#3530#0" expanded="true" />
+            <element signature="e#1079#1090#0" expanded="true" />
+            <element signature="e#3646#3662#0" expanded="true" />
+            <element signature="e#3780#4004#0" expanded="true" />
+            <element signature="e#4003#4004#0" expanded="true" />
+            <element signature="e#4641#4649#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -697,14 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Mathematics.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="133" column="52" selection-start-line="133" selection-start-column="52" selection-end-line="133" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/text.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -729,17 +756,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/text2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="8589" selection-start-line="0" selection-start-column="8589" selection-end-line="0" selection-end-column="8589" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/text3.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1758" column="16" selection-start-line="1758" selection-start-column="16" selection-end-line="1758" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14351" column="0" selection-start-line="14351" selection-start-column="0" selection-end-line="14351" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_73/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="374" column="14" selection-start-line="374" selection-start-column="14" selection-end-line="374" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Bigrams.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6666667">
-          <caret line="119" column="5" selection-start-line="119" selection-start-column="5" selection-end-line="119" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="20" selection-end-column="11" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#681#692#0" expanded="true" />
-            <element signature="e#3172#3188#0" expanded="true" />
-            <element signature="e#3306#3530#0" expanded="true" />
-            <element signature="e#3529#3530#0" expanded="true" />
+            <element signature="e#1079#1090#0" expanded="true" />
+            <element signature="e#3646#3662#0" expanded="true" />
+            <element signature="e#3780#4004#0" expanded="true" />
+            <element signature="e#4003#4004#0" expanded="true" />
+            <element signature="e#4641#4649#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Mathematics.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4074074">
+          <caret line="133" column="52" selection-start-line="133" selection-start-column="52" selection-end-line="133" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>

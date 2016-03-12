@@ -8,12 +8,25 @@ public class Bigrams extends AlphaBet {
 
     private String text;
     private Map<String, Double> bigrams;
+    private static final Map<Character, Integer> ALPHABET;
+
+    static {
+        ALPHABET = new HashMap<Character, Integer>();
+        int count = 0;
+        for (char c : base) {
+            ALPHABET.put(c, count++);
+        }
+//        for (Map.Entry<Character, Integer> entry : ALPHABET.entrySet()) {
+//            System.out.println(entry.getKey() + " " + entry.getValue());
+//        }
+    }
 
     Bigrams(String fileName, boolean check) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
             StringBuilder result = new StringBuilder();
             String temp;
+
             while ((temp = reader.readLine()) != null) {
                 if (!check) {
                     result.append(temp);
@@ -23,7 +36,8 @@ public class Bigrams extends AlphaBet {
                         set.add(c);
                     }
                     for (int i = 0; i < temp.length(); i++) {
-                        if (set.contains(temp.charAt(i))) {
+//                        if (set.contains(temp.charAt(i))) {
+                        if (ALPHABET.containsKey(temp.charAt(i))) {
                             result.append(temp.charAt(i));
                         }
                     }
@@ -57,7 +71,7 @@ public class Bigrams extends AlphaBet {
         System.out.println("text: " +text);
         System.out.println(bigrams);
         System.out.println(bigrams.size());
-        printBigrams();
+//        printBigrams();
     }
 
     private int sum(Map<String, Double> map) {
@@ -90,7 +104,7 @@ public class Bigrams extends AlphaBet {
     }
 
     public void calculateBigams() {
-        for (int i = 0; i < text.length(); i = i + 2) {
+        for (int i = 0; i < text.length() - 1; i = i + 2) {
             StringBuilder temp = new StringBuilder();
             temp.append(text.charAt(i));
             temp.append(text.charAt(i + 1));
@@ -115,17 +129,52 @@ public class Bigrams extends AlphaBet {
                 count++;
             }
         }
-//        System.out.println(list);
         return result;
     }
 
+    public static int getBigramValue(Map.Entry<String, Double> entry) {
+        int result = 0;
+        char c = entry.getKey().charAt(0);
+        result += ALPHABET.get(c) * ALPHABET.size();
+        c = entry.getKey().charAt(1);
+        result += ALPHABET.get(c);
+        return result;
+    }
+
+
     public static void main(String[] args) {
+        ArrayList<String> b = new ArrayList<String>();
+        b.add("ст");
+        b.add("но");
+        b.add("то");
+        b.add("на");
+        b.add("ен");
+
         Bigrams bigrams = new Bigrams("text.txt", false);
-//        Bigrams bigrams = new Bigrams("text.txt", true);
         bigrams.print();
-        for (Map.Entry<String, Double> pair : bigrams.findMostFrequentBigrams(5).entrySet()) {
+        printMap(bigrams.findMostFrequentBigrams(5));
+//        for (Map.Entry<String, Double> pair : bigrams.findMostFrequentBigrams(5).entrySet()) {
+//            System.out.println(pair.getKey() + " " + pair.getValue());
+//        }
+        System.out.println("------------------------------");
+        for (Map.Entry<String, Double> pair : check().entrySet()) {
             System.out.println(pair.getKey() + " " + pair.getValue());
+            System.out.println(getBigramValue(pair));
         }
     }
+
+    public static void printMap(Map<String, Double> map) {
+        for (Map.Entry<String, Double> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
+    }
+
+    public static Map<String, Double>  check() {
+        Bigrams bigrams = new Bigrams("1.txt", true);
+        bigrams.print();
+        return bigrams.findMostFrequentBigrams(5);
+    }
+
+//    public calculateSystem()
 
 }
