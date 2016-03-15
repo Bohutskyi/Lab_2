@@ -132,6 +132,22 @@ public class Bigrams extends AlphaBet {
         return result;
     }
 
+    public static int getBigramValue(String bigram) {
+        int result = 0;
+        char c = bigram.charAt(0);
+        result += ALPHABET.get(c) * ALPHABET.size();
+        c = bigram.charAt(1);
+        result += ALPHABET.get(c);
+        return result;
+    }
+
+    public static String getBigramOnValue(int value) {
+        StringBuilder result = new StringBuilder();
+        result.append(base[value / base.length]);
+        result.append(base[value % base.length]);
+        return result.toString();
+    }
+
     public static int getBigramValue(Map.Entry<String, Double> entry) {
         int result = 0;
         char c = entry.getKey().charAt(0);
@@ -161,6 +177,15 @@ public class Bigrams extends AlphaBet {
             System.out.println(pair.getKey() + " " + pair.getValue());
             System.out.println(getBigramValue(pair));
         }
+
+        for (Map.Entry<String, Double> entry : bigrams.findMostFrequentBigrams(5).entrySet()) {
+
+        }
+    }
+
+    public void f(Map.Entry<String, Double> entry1, Map.Entry<String, Double> entry2) {
+        System.out.println("1: " + entry1.getKey() + " " + entry1.getValue());
+        System.out.println("2: " + entry2.getKey() + " " + entry2.getValue());
     }
 
     public static void printMap(Map<String, Double> map) {
@@ -174,7 +199,5 @@ public class Bigrams extends AlphaBet {
         bigrams.print();
         return bigrams.findMostFrequentBigrams(5);
     }
-
-//    public calculateSystem()
 
 }
