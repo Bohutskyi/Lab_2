@@ -159,14 +159,14 @@ public class Bigrams extends AlphaBet {
 
 
     public static void main(String[] args) {
-        ArrayList<String> b = new ArrayList<String>();
-        b.add("ст");
-        b.add("но");
-        b.add("то");
-        b.add("на");
-        b.add("ен");
+        ArrayList<String> bigramsCipherText = new ArrayList<String>();
+        bigramsCipherText.add("ст");
+        bigramsCipherText.add("но");
+        bigramsCipherText.add("то");
+        bigramsCipherText.add("на");
+        bigramsCipherText.add("ен");
 
-        Bigrams bigrams = new Bigrams("text.txt", false);
+        Bigrams bigrams = new Bigrams("Base/text.txt", false);
         bigrams.print();
         printMap(bigrams.findMostFrequentBigrams(5));
 //        for (Map.Entry<String, Double> pair : bigrams.findMostFrequentBigrams(5).entrySet()) {
@@ -178,14 +178,47 @@ public class Bigrams extends AlphaBet {
             System.out.println(getBigramValue(pair));
         }
 
-        for (Map.Entry<String, Double> entry : bigrams.findMostFrequentBigrams(5).entrySet()) {
+        System.out.println("***********************************************************");
 
+//        for (int i = 0; i < bigramsCipherText.size(); i++) {
+//            for (int j = 0; j < bigramsCipherText.size(); j++) {
+//                if (!bigramsCipherText.get(i).equals(bigramsCipherText.get(j))) {
+//                    System.out.println(bigramsCipherText.get(i) + " " + bigramsCipherText.get(j));
+//                }
+//            }
+//        }
+
+        for (Map.Entry<String, Double> entry1 : bigrams.findMostFrequentBigrams(5).entrySet()) {
+            for (Map.Entry<String, Double> entry2 : bigrams.findMostFrequentBigrams(5).entrySet()) {
+                if (!entry1.getKey().equals(entry2.getKey())) {
+                    for (int i = 0; i < bigramsCipherText.size(); i++) {
+                        for (int j = 0; j < bigramsCipherText.size(); j++) {
+                            if (!bigramsCipherText.get(i).equals(bigramsCipherText.get(j))) {
+//                                System.out.println(bigramsCipherText.get(i) + " " + bigramsCipherText.get(j));
+                                breaking(bigramsCipherText.get(i), bigramsCipherText.get(j), entry1.getKey(), entry2.getKey());
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
-    public void f(Map.Entry<String, Double> entry1, Map.Entry<String, Double> entry2) {
-        System.out.println("1: " + entry1.getKey() + " " + entry1.getValue());
-        System.out.println("2: " + entry2.getKey() + " " + entry2.getValue());
+//    public void breaking(Map.Entry<String, Double> entry1, Map.Entry<String, Double> entry2) {
+    public static void breaking(String x1, String x2, String y1, String y2) {
+//        System.out.println("1: " + entry1.getKey() + " " + entry1.getValue());
+//        System.out.println("2: " + entry2.getKey() + " " + entry2.getValue());
+
+//        System.out.println("x1 = " + x1);
+//        System.out.println("x2 = " + x2);
+//        System.out.println("y1 = " + y1);
+//        System.out.println("y2 = " + y2);
+        for (Map.Entry<Integer, Integer> entry : Mathematics.calculateSystemComparisons(Bigrams.getBigramValue(x1),
+        Bigrams.getBigramValue(x2), Bigrams.getBigramValue(y1), Bigrams.getBigramValue(y2), AlphaBet.base.length * AlphaBet.base.length).entrySet()) {
+            Text text = new Text("Base/text.txt");
+            System.out.println(entry.getKey() + " " + entry.getValue());
+            System.out.println(text.decrypt(entry.getKey(), entry.getValue()));
+        }
     }
 
     public static void printMap(Map<String, Double> map) {
@@ -195,7 +228,7 @@ public class Bigrams extends AlphaBet {
     }
 
     public static Map<String, Double>  check() {
-        Bigrams bigrams = new Bigrams("1.txt", true);
+        Bigrams bigrams = new Bigrams("Base/1.txt", true);
         bigrams.print();
         return bigrams.findMostFrequentBigrams(5);
     }

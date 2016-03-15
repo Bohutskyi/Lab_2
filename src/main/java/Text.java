@@ -43,7 +43,11 @@ public class Text {
 //                count += AlphaBet.base.length + AlphaBet.base.length;
                 count += AlphaBet.base.length * AlphaBet.base.length;
             }
-            count *= Mathematics.getReverse(a, (AlphaBet.base.length * AlphaBet.base.length)).intValue();
+            try {
+                count *= Mathematics.getReverse(a, (AlphaBet.base.length * AlphaBet.base.length)).intValue();
+            } catch (NullPointerException e) {
+
+            }
             count %= (AlphaBet.base.length * AlphaBet.base.length);
             result.append(Bigrams.getBigramOnValue(count));
         }
@@ -66,12 +70,20 @@ public class Text {
     public static void main(String[] args) {
 //        Text text = new Text("base/plainText.txt");
 //        System.out.println(text.encrypt(355, 764));
+//        System.out.println(text.encrypt(1316, 764));
 
         System.out.println(Bigrams.getBigramValue("юя"));
         System.out.println(Bigrams.getBigramOnValue(929));
 
         Text text = new Text("base/cipherText.txt");
         System.out.println(text.decrypt(355, 764));
+        System.out.println(text.decrypt(1316, 764));
+
+        System.out.println("***************************");
+        text = new Text("base/text.txt");
+        System.out.println(text.decrypt(385560, 700));
+        System.out.println(text.decrypt(199, 700));
+        System.out.println(text.decrypt(231800, 700));
 
     }
 }

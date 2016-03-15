@@ -81,6 +81,7 @@ public class Mathematics {
             temp = temp.multiply(b);
             result = new BigInteger[1];
             result[0] = temp;
+//            System.out.println("here");
             return result;
         } else {
             BigInteger[] temp = b.divideAndRemainder(math.r);
@@ -107,15 +108,19 @@ public class Mathematics {
         while (y2 > y1) {
             y2 -= m;
         }
-        for (BigInteger i : linearComparison(x1 - x2, y1 - y2, m)) {
-            int b = (y1 - i.intValue() * x1);
-            while (b > m) {
-                b -= m;
+        try {
+            for (BigInteger i : linearComparison(x1 - x2, y1 - y2, m)) {
+                int b = (y1 - i.intValue() * x1);
+                while (b > m) {
+                    b -= m;
+                }
+                while (b < 0) {
+                    b += m;
+                }
+                result.put(i.intValue(), b);
             }
-            while (b < 0) {
-                b += m;
-            }
-            result.put(i.intValue(), b);
+        } catch (NullPointerException e) {
+
         }
         return result;
     }
