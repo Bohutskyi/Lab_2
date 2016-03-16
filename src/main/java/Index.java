@@ -66,7 +66,6 @@ public class Index extends AlphaBet {
 
     public static void main(String[] args) {
         try {
-//            BufferedReader reader = new BufferedReader(new FileReader("base/plaintext.txt"));
             BufferedReader reader = new BufferedReader(new FileReader("base/toEncrypt.txt"));
             String temp;
             StringBuilder result = new StringBuilder();

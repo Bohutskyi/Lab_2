@@ -110,14 +110,11 @@ public class Mathematics {
         }
         try {
             for (BigInteger i : linearComparison(x1 - x2, y1 - y2, m)) {
-                int b = (y1 - i.intValue() * x1);
-                while (b > m) {
-                    b -= m;
-                }
+                int b = (y1 - i.intValue() * x1) % m;
                 while (b < 0) {
                     b += m;
                 }
-                result.put(i.intValue(), b);
+                result.put(i.intValue() % m, b);
             }
         } catch (NullPointerException e) {
 

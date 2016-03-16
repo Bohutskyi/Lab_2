@@ -7,6 +7,10 @@ public class Text {
 
     private String text;
 
+    public Text() {
+
+    }
+
     public Text(String fileName) {
         try {
             BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -33,6 +37,10 @@ public class Text {
     }
 
     public String decrypt(int a, int b) {
+
+        a = a % (AlphaBet.base.length * AlphaBet.base.length);
+        b = b % (AlphaBet.base.length * AlphaBet.base.length);
+
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < text.length() - 1; i = i + 2) {
             StringBuilder temp = new StringBuilder();
@@ -40,7 +48,6 @@ public class Text {
             temp.append(text.charAt(i + 1));
             int count = Bigrams.getBigramValue(temp.toString()) - b;
             while (count < 0) {
-//                count += AlphaBet.base.length + AlphaBet.base.length;
                 count += AlphaBet.base.length * AlphaBet.base.length;
             }
             try {
