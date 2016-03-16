@@ -204,20 +204,20 @@ public class Bigrams extends AlphaBet {
         }
     }
 
-//    public void breaking(Map.Entry<String, Double> entry1, Map.Entry<String, Double> entry2) {
     public static void breaking(String x1, String x2, String y1, String y2) {
-//        System.out.println("1: " + entry1.getKey() + " " + entry1.getValue());
-//        System.out.println("2: " + entry2.getKey() + " " + entry2.getValue());
-
-//        System.out.println("x1 = " + x1);
-//        System.out.println("x2 = " + x2);
-//        System.out.println("y1 = " + y1);
-//        System.out.println("y2 = " + y2);
         for (Map.Entry<Integer, Integer> entry : Mathematics.calculateSystemComparisons(Bigrams.getBigramValue(x1),
         Bigrams.getBigramValue(x2), Bigrams.getBigramValue(y1), Bigrams.getBigramValue(y2), AlphaBet.base.length * AlphaBet.base.length).entrySet()) {
             Text text = new Text("Base/text.txt");
-            System.out.println(entry.getKey() + " " + entry.getValue());
-            System.out.println(text.decrypt(entry.getKey(), entry.getValue()));
+
+
+            String temp = text.decrypt(entry.getKey(), entry.getValue());
+//            System.out.println(new Index(temp).calculateI());
+            if (TextRecognizer.isRecognized(temp)) {
+                System.out.println(entry.getKey() + " " + entry.getValue());
+            }
+
+//            System.out.println(entry.getKey() + " " + entry.getValue());
+//            System.out.println(text.decrypt(entry.getKey(), entry.getValue()));
         }
     }
 
